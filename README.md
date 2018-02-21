@@ -19,4 +19,6 @@ Currently, I have only five exploits to use against Vulnserver:
 
 * **exploit_kstet.py** - demonstrates egghunting concept. There is too small place to store your shellcode, but enough to store egghunter. Egg is placed via execution of different vulnserver commands (in hope that one of them will work as planned and store our egg and shellcode in memory).
 
-* **exploit_gter.py** - yet another example of egghunting technique. 
+* **exploit_gter.py** - yet another example of egghunting technique.
+
+* **exploit_lter.py** - task about bad characters where all bytes after 0x7F are forbidden for input.  
