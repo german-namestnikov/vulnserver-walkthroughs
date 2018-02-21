@@ -16,3 +16,5 @@ Currently, I have only three exploits to use against Vulnserver:
 * exploit_hter.py - similar with exploit_trun.py, but all sent chars will be placed in memory as bytes, not char codes. In two words, sent "AAAA" string means not "\x41\x41\x41\x41", but "\xAA\xAA". Based on HTER command.
 
 * exploit_gmon.py - SEH-based exploit that utilizes buffer overflow in GMON command. SEH may be too hard to understand, moreover, this exploit involves jumpcode, because there is too small memory amount to place shellcode after SEH record.
+
+* exploit_kstet.py - demonstrates egghunting concept. There is too small place to store your shellcode, but enough to store egghunter. Egg is placed via execution of different vulnserver commands (in hope that one of them will work as planned and store our egg and shellcode in memory).
