@@ -10,7 +10,7 @@ You can use [this pit](https://github.com/proteansec/fuzzyftp/blob/master/peach/
 It is very important to create correct Data Models to fuzz this app, because some Vulnserver commands require special chars to crash an application or execute your payload. You can see these chars in my exploits or in Vulnserver source code.
 
 ## Exploits
-Currently, I have only five exploits to use against Vulnserver:
+Currently, I have these exploits to use against Vulnserver (and seems like that is all):
 * **exploit_trun.py** - simple stack-based buffer overflow in TRUN command that executes payload with JMP ESP instruction.
 
 * **exploit_hter.py** - similar with exploit_trun.py, but all sent chars will be placed in memory as bytes, not char codes. In two words, sent "AAAA" string means not "\x41\x41\x41\x41", but "\xAA\xAA". Based on HTER command.
