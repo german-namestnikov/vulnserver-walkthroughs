@@ -3,11 +3,19 @@
 Hi there! Here I will store my exploits and all other stuff for [the Vulnserver Application](http://www.thegreycorner.com/2010/12/introducing-vulnserver.html). 
 
 ## Peach Pits
-I used [Peach Fuzzer](http://www.peach.tech/resources/peachcommunity/) to discover flaws in the Vulnserver Application. I am still a newbie in fuzzing and, especially, in Peach Fuzzer, but I will publish all my Peach Pits when all other work will be finished.
+I used [Peach Fuzzer](http://www.peach.tech/resources/peachcommunity/) to discover flaws in the Vulnserver Application. I am still a newbie in fuzzing and, especially, in Peach Fuzzer, so, my pits definitely shouldn't be viewed as best practices. Also, there are a lot of pits for one application and I think that this is a wrong way. I am going to merge all of them in one pit (to rule them all) in a nearest future.
 
-You can use [this pit](https://github.com/proteansec/fuzzyftp/blob/master/peach/vulnserver.xml) which didn't work for me.
+It is very important to create correct Data Models to fuzz this app, because some Vulnserver commands require special chars to crash an application or execute your payload. You can see these chars in Vulnserver source code.
 
-It is very important to create correct Data Models to fuzz this app, because some Vulnserver commands require special chars to crash an application or execute your payload. You can see these chars in my exploits or in Vulnserver source code.
+#### Start Agent
+```
+peach -a tcp
+```
+
+#### Start Fuzzing
+```
+peach vulnserver_gmon.xml TestGMON
+```
 
 ## Exploits
 Currently, I have these exploits to use against Vulnserver (and seems like that is all):
@@ -22,3 +30,4 @@ Currently, I have these exploits to use against Vulnserver (and seems like that 
 * **exploit_gter.py** - yet another example of egghunting technique.
 
 * **exploit_lter.py** - task about bad characters where all bytes after 0x7F are forbidden for input.  
+ 
